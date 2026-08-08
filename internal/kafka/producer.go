@@ -4,8 +4,6 @@ import (
 	"cafe-engine/internal/model"
 	"context"
 	"encoding/json"
-	"log"
-	"time"
 
 	"github.com/segmentio/kafka-go"
 )
@@ -36,10 +34,4 @@ func (p *Producer) PublishOrder(ctx context.Context, order model.Order) error {
 		Key:   []byte(order.ID), // Order ID used as partition key
 		Value: bytes,
 	})
-
-	// 2. Log confirmation AFTER Kafka responds
-	log.Printf("[KAFKA PRODUCER %s] Successfully published order %s to topic '%s'",
-		time.Now().Format("15:04:05.000"), order.ID, p.writer.Topic)
-
-	return nil
 }
