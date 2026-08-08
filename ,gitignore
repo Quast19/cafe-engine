@@ -1,0 +1,17 @@
+# Executables & Binaries
+*.exe
+*.exe;
+*.dll
+*.so
+*.dylib
+bin/
+
+# Test binaries
+*.test
+
+# OS & Editor generated files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
